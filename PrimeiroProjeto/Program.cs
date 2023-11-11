@@ -1,33 +1,26 @@
 ﻿
 
+using PrimeiroProjeto;
+
+Triangulo X = new Triangulo();
+Triangulo Y = new Triangulo();
+
+Console.WriteLine("Digite as medidas do triângulo X: ");
+
+X.A = double.Parse(Console.ReadLine());
+X.B = double.Parse(Console.ReadLine());
+X.C = double.Parse(Console.ReadLine());
+
+Console.WriteLine("Digite as medidas do triângulo Y: ");
+
+Y.A = double.Parse(Console.ReadLine());
+Y.B = double.Parse(Console.ReadLine());
+Y.C = double.Parse(Console.ReadLine());
 
 
-Console.Write("Entre com as medidas do triângulo X: ");
-string x = Console.ReadLine();
-x.Split(' ');
+Console.WriteLine($"Área do triângulo X: {X.calcArea()}");
+Console.WriteLine($"Área do triângulo Y: {Y.calcArea()}");
 
+string maiorArea = X.calcArea() >= Y.calcArea() ? "X" : "Y";
 
-Console.Write("Entre com as medidas do triângulo Y: ");
-string y = Console.ReadLine();
-y.Split(' ');
-
-double areaX = calcArea(x[0], x[1], x[2]);
-double areaY = calcArea(y[0], y[1], y[2]);
-
-Console.WriteLine($"Área de X: {areaX}");
-Console.WriteLine($"Área de Y: {areaY}");
-
-if(areaX > areaX)
-{
-    Console.WriteLine("Maior Área: X");
-}
-else
-{
-    Console.WriteLine("Maior Área: Y");
-}
-
-static double calcArea(double a, double b, double c)
-{
-    double p = (a + b + c) / 2;
-    return Math.Sqrt(p * (p - a) * (p - b) * (p - c));
-}
+Console.WriteLine($"Triângulo da Área maior: {maiorArea}");
