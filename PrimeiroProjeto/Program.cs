@@ -2,25 +2,29 @@
 
 using PrimeiroProjeto;
 
-Triangulo X = new Triangulo();
-Triangulo Y = new Triangulo();
+Produto produto = new Produto();
 
-Console.WriteLine("Digite as medidas do triângulo X: ");
+Console.Write("Digite o nome do produto: ");
+produto.nome = Console.ReadLine();
 
-X.A = double.Parse(Console.ReadLine());
-X.B = double.Parse(Console.ReadLine());
-X.C = double.Parse(Console.ReadLine());
+Console.Write("Digite a quantidade do produto: ");
+produto.quantidade = int.Parse(Console.ReadLine());
 
-Console.WriteLine("Digite as medidas do triângulo Y: ");
-
-Y.A = double.Parse(Console.ReadLine());
-Y.B = double.Parse(Console.ReadLine());
-Y.C = double.Parse(Console.ReadLine());
+Console.Write("Digite o preço do produto: ");
+produto.preco = double.Parse(Console.ReadLine());
+Console.WriteLine();
 
 
-Console.WriteLine($"Área do triângulo X: {X.calcArea()}");
-Console.WriteLine($"Área do triângulo Y: {Y.calcArea()}");
+Console.WriteLine($"Dados do Produto: {produto.valorTotalEmEstoque()} \n");
 
-string maiorArea = X.calcArea() >= Y.calcArea() ? "X" : "Y";
+Console.Write("Digite o número de produtos a ser adicionado no estoque: ");
+produto.adicionarProduto(int.Parse(Console.ReadLine()));
+Console.WriteLine();
 
-Console.WriteLine($"Triângulo da Área maior: {maiorArea}");
+Console.WriteLine($"Dados Atualizados: {produto.valorTotalEmEstoque()} \n");
+
+Console.Write("Digite o número de produtos a ser removido do estoque: ");
+produto.removerProduto(int.Parse(Console.ReadLine()));
+Console.WriteLine();
+
+Console.WriteLine($"Dados Atualizados: {produto.valorTotalEmEstoque()}");
