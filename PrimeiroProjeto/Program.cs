@@ -1,23 +1,34 @@
 ﻿
 
-using System.Globalization;
 
-Console.Write("Entre com o seu nome: ");
-string name = Console.ReadLine();
 
-Console.Write("Quantos quartos tem na sua casa: ");
-int quartos = int.Parse(Console.ReadLine());
 
-Console.Write("Entre com o preço do produto: ");
-string preco = Console.ReadLine();
 
-Console.Write("Entre com seu último nome, idade, altura (mesma linha): ");
-string[] data = Console.ReadLine().Split(' ');
+Console.Write("Digite dois números separados por espaço: ");
+string[] numeros = Console.ReadLine().Split(' ');
 
-Console.WriteLine($"Nome: {name}");
-Console.WriteLine($"Quantidade de Quartos: {quartos}");
-Console.WriteLine($"Preço dado : {Double.Parse(preco, CultureInfo.CurrentCulture)}");
+Console.WriteLine($"O valor da soma: {calcularSoma(int.Parse(numeros[0]), int.Parse(numeros[1]))}");
+Console.WriteLine($"O valor da subtração: {calcularSubtracao(int.Parse(numeros[0]), int.Parse(numeros[1]))}");
+Console.WriteLine($"O valor da multiplicação: {calcularMultiplicacao(int.Parse(numeros[0]), int.Parse(numeros[1]))}");
+Console.WriteLine($"O valor da divisão: {calcularDivisao(int.Parse(numeros[0]), int.Parse(numeros[1]))}");
 
-Console.WriteLine($"Último nome: {data[0]}");
-Console.WriteLine($"Idade: {data[1]}");
-Console.WriteLine($"Altura: {data[2]}cm");
+
+static int calcularSoma(int n1, int n2)
+{
+    return n1 + n2;
+}
+
+static int calcularSubtracao(int n1, int n2)
+{
+    return n1 - n2;
+}
+
+static int calcularMultiplicacao(int n1, int n2)
+{
+    return n1 * n2;
+}
+
+static double calcularDivisao(int n1, int n2)
+{
+    return (double) n1 / n2;
+}
