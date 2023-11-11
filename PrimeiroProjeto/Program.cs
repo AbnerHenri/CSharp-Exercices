@@ -1,27 +1,12 @@
 ﻿
-using System.Globalization;
+double a = 2.0, b = 6.0, c = 35.0;
+double sqrtB = Math.Pow(b, 2.0);
 
-string produto1 = "Computador";
-string produto2 = "Mesa de Escritório";
+double delta = sqrtB - 4.0 * a * c;
 
-byte idade = 30;
-int codigo = 5290;
-char genero = 'M';
+double xa = (-sqrtB + Math.Sqrt(delta)) / 2 * a;
+double xb = (-sqrtB - Math.Sqrt(delta)) / 2 * a;
 
-double preco1 = 2100.0;
-double preco2 = 650.52;
-double medida = 52.903510;
-
-Console.WriteLine("Produtos:");
-Console.WriteLine($"{produto1}, cujo o preço é ${preco1}");
-Console.WriteLine($"{produto2}, cujo o preço é ${preco2}");
-
-Console.WriteLine();
-
-Console.WriteLine($"Registro: {idade} de idade, código {codigo}, e gênero {genero}");
-
-Console.WriteLine();
-
-Console.WriteLine($"Medida com oito casas decimais: {medida}");
-Console.WriteLine("Arredondado (três casas decimais):" + medida.ToString("F3"));
-Console.WriteLine("Separador decimal invariant culture:" + medida.ToString(CultureInfo.InvariantCulture));
+Console.WriteLine($"Delta: {delta}");
+Console.WriteLine($"X1: {xa}");
+Console.WriteLine($"X2: {xb}");
